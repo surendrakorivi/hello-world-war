@@ -1,9 +1,9 @@
 pipeline {
-    agent { docker 'maven:3.9.3-eclipse-temurin-17' }
+    agent any
     stages {
-        stage('Example Build') {
+        stage('Clone Step') {
             steps {
-                sh 'mvn -B clean verify'
+                sh 'git clone https://github.com/surendrakorivi/hello-world-war.git'
             }
         }
     }
